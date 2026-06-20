@@ -1,0 +1,270 @@
+// void PH_EXE_APPLICATION(void)
+// {
+//     if(signal_ctrl_water_level_start_ph_ec_unit == SENSOR_IC_SIGNAL_TRUE && signal_ctrl_water_level_stop_ph_ec_unit == SENSOR_IC_SIGNAL_FALSE)
+//     {
+//         signal_data_get_ph_water_volume_data = signal_data_get_tank_capacity;
+//         switch (ph_app_current_state)
+//         {
+//             case PH_CALCULATE_PH_ADJ_VOLUME:
+//             {
+//                 //set the ph calculated differece
+//                 signal_data_set_ph_difference_data  = calculate_ph_adjustment(signal_data_get_target_ph_data, signal_data_get_ph_data, signal_data_get_ph_concentration_data, signal_data_get_ph_water_volume_data);
+//                 //set the calculated req ec concentration volume
+//                 signal_data_set_ph_req_volume       = calculate_adjustment_volume(signal_data_get_ph_water_volume_data, signal_data_get_ph_data, signal_data_get_target_ph_data, signal_data_get_ph_concentration_data);
+//                 if(signal_data_set_ph_difference_data > PH_DIFF_TOLERANCE_NEG && signal_data_set_ph_difference_data < PH_DIFF_TOLERANCE_POS)
+//                 {
+//                     signal_ctrl_pipe_water_enable_from_ph = SENSOR_IC_SIGNAL_TRUE;
+//                 }else
+//                 {
+//                     signal_ctrl_pipe_water_enable_from_ph = SENSOR_IC_SIGNAL_FALSE;
+//                 }
+//                 //add the next state
+//                 ph_app_current_state = PH_EXE_PUMPS;
+//             }
+//                 break;
+//             case PH_EXE_PUMPS:
+//             {
+//                 if(ph_increase_get_current_time_assigned == false)
+//                 {
+//                     //if difference is positive means that activate water in and out relays
+//                     if(signal_data_set_ph_difference_data > 0)
+//                     {
+//                         if(signal_data_set_ph_difference_data > PH_DIFF_TOLERANCE_POS)
+//                         {
+//                             // reference_time = signal_data_get_rtc_data;
+//                             /* when assigning start time (replace these lines)
+//                                reference_time = signal_data_get_rtc_data;
+//                             */
+//                             /* use a copy instead: */
+//                             ph_reference_time = &ph_reference_time_value;
+//                             *ph_reference_time = *signal_data_get_rtc_data;  /* copy struct value */
+//                             required_time_for_ph_dosing = ph_calculate_active_time_of_pump(signal_data_set_ph_req_volume);
+//                             ph_increase_get_current_time_assigned = true;
+//                             signal_ctrl_ph_disable_wl_unit = SENSOR_IC_SIGNAL_TRUE;
+//                             //turn on water output
+//                             signal_ctrl_peripheral_turn_on_main_tank_water_output                   = SENSOR_IC_SIGNAL_TRUE;
+//                             signal_ctrl_peripheral_turn_off_main_tank_water_output                  = SENSOR_IC_SIGNAL_FALSE;
+//                             if(signal_data_get_water_level_data < 30)
+//                             {
+//                                 //turn off water input
+//                                 signal_ctrl_peripheral_turn_on_main_tank_water_input                = SENSOR_IC_SIGNAL_FALSE;
+//                                 signal_ctrl_peripheral_turn_off_main_tank_water_input               = SENSOR_IC_SIGNAL_TRUE;
+//                             }else
+//                             {
+//                                 //turn on water input
+//                                 signal_ctrl_peripheral_turn_on_main_tank_water_input                = SENSOR_IC_SIGNAL_TRUE;
+//                                 signal_ctrl_peripheral_turn_off_main_tank_water_input               = SENSOR_IC_SIGNAL_FALSE;
+//                             }
+//                             signal_ctrl_mixer_motors_turn_on                                        = SENSOR_IC_SIGNAL_TRUE;
+//                             ph_prev_diff_position                                                   = PH_POS_POSITIVE;
+//                         }else
+//                         {
+//                             ph_prev_diff_position                                                   = PH_POS_POSITIVE;
+//                             signal_ctrl_ph_disable_wl_unit                                          = SENSOR_IC_SIGNAL_FALSE;
+//                             signal_ctrl_mixer_motors_turn_on                                        = SENSOR_IC_SIGNAL_FALSE;
+//                         }
+//                     }
+//                     //if difference is negative means that activate ph pump
+//                     if(signal_data_set_ph_difference_data < 0)
+//                     {
+//                         signal_ctrl_ph_disable_wl_unit = SENSOR_IC_SIGNAL_FALSE;
+//                         if(signal_data_set_ph_difference_data < PH_DIFF_TOLERANCE_NEG)
+//                         {
+//                             ph_reference_time = signal_data_get_rtc_data;
+//                             required_time_for_ph_dosing = ph_calculate_active_time_of_pump(signal_data_set_ph_req_volume);
+//                             ph_increase_get_current_time_assigned   = true;
+//                             signal_ctrl_peripheral_turn_on_ph_pump  = SENSOR_IC_SIGNAL_TRUE;
+//                             signal_ctrl_mixer_motors_turn_on        = SENSOR_IC_SIGNAL_TRUE;
+//                             ph_prev_diff_position                   = PH_POS_NEGATIVE;
+//                         }else
+//                         {
+//                             signal_ctrl_peripheral_turn_on_ph_pump  = SENSOR_IC_SIGNAL_FALSE;
+//                             signal_ctrl_mixer_motors_turn_on        = SENSOR_IC_SIGNAL_FALSE;
+//                             ph_prev_diff_position                   = PH_POS_NEGATIVE;
+//                         }
+//                     }
+//                 }else
+//                 {
+//                     if(signal_data_set_ph_difference_data < 0)
+//                     {
+//                         ph_current_diff_position = PH_POS_NEGATIVE;
+//                         if (ph_current_diff_position == ph_prev_diff_position)
+//                         {
+//                             signal_ctrl_ph_disable_wl_unit = SENSOR_IC_SIGNAL_FALSE;
+//                             if(signal_data_set_ph_difference_data < PH_DIFF_TOLERANCE_NEG)
+//                             {
+//                                 calculated_time_difference = ph_timeToSeconds(ph_calculateTimeDifference(ph_reference_time, signal_data_get_rtc_data));
+//                                 if(calculated_time_difference < required_time_for_ph_dosing)
+//                                 {
+//                                     signal_ctrl_peripheral_turn_on_ec_pump  = SENSOR_IC_SIGNAL_TRUE;
+//                                     signal_ctrl_mixer_motors_turn_on        = SENSOR_IC_SIGNAL_TRUE;
+//                                 }else
+//                                 {
+//                                     //wait for mixing time now
+//                                     if(calculated_time_difference < (required_time_for_ph_dosing + signal_data_get_mixing_time))
+//                                     {
+//                                         signal_ctrl_peripheral_turn_on_ph_pump  = SENSOR_IC_SIGNAL_FALSE;
+//                                         signal_ctrl_mixer_motors_turn_on        = SENSOR_IC_SIGNAL_TRUE;
+//                                     }else
+//                                     {
+//                                         signal_ctrl_mixer_motors_turn_on        = SENSOR_IC_SIGNAL_FALSE;
+//                                         ph_achieved_targeted_time               = true;
+//                                     }
+//                                 }
+//                             }else
+//                             {
+//                                 ph_achieved_targeted_time = true;
+//                                 signal_ctrl_peripheral_turn_on_ph_pump = SENSOR_IC_SIGNAL_FALSE;
+//                                 signal_ctrl_mixer_motors_turn_on        = SENSOR_IC_SIGNAL_FALSE;
+//                             }
+//                         }else
+//                         {
+//                             signal_ctrl_peripheral_turn_on_ph_pump  = SENSOR_IC_SIGNAL_FALSE;
+//                             signal_ctrl_mixer_motors_turn_on        = SENSOR_IC_SIGNAL_FALSE;
+//                             ph_increase_get_current_time_assigned   = false;
+//                         }
+//                     }
+
+//                     if(signal_data_set_ph_difference_data > 0)
+//                     {
+//                         ph_current_diff_position = PH_POS_POSITIVE;
+//                         if (ph_current_diff_position == ph_prev_diff_position)
+//                         {
+//                             if(signal_data_set_ec_difference_data > PH_DIFF_TOLERANCE_POS)
+//                             {
+//                                 calculated_time_difference = ph_timeToSeconds(ph_calculateTimeDifference(ph_reference_time, signal_data_get_rtc_data));
+//                                 if(calculated_time_difference < required_time_for_ph_dosing)
+//                                 {
+//                                     signal_ctrl_ph_disable_wl_unit = SENSOR_IC_SIGNAL_TRUE;
+//                                     //turn on water output
+//                                     signal_ctrl_peripheral_turn_on_main_tank_water_output               = SENSOR_IC_SIGNAL_TRUE;
+//                                     signal_ctrl_peripheral_turn_off_main_tank_water_output              = SENSOR_IC_SIGNAL_FALSE;
+//                                     signal_ctrl_mixer_motors_turn_on                                    = SENSOR_IC_SIGNAL_TRUE;
+//                                     if(signal_data_get_water_level_data < 30)
+//                                     {
+//                                         //turn off water input
+//                                         signal_ctrl_peripheral_turn_on_main_tank_water_input                = SENSOR_IC_SIGNAL_FALSE;
+//                                         signal_ctrl_peripheral_turn_off_main_tank_water_input               = SENSOR_IC_SIGNAL_TRUE;
+//                                     }else
+//                                     {
+//                                         //turn on water input
+//                                         signal_ctrl_peripheral_turn_on_main_tank_water_input                = SENSOR_IC_SIGNAL_TRUE;
+//                                         signal_ctrl_peripheral_turn_off_main_tank_water_input               = SENSOR_IC_SIGNAL_FALSE;
+//                                     }
+//                                 }else
+//                                 {
+//                                     //wait for mixing time now
+//                                     if(calculated_time_difference < (required_time_for_ph_dosing + signal_data_get_mixing_time))
+//                                     {
+//                                         //turn off water input
+//                                         signal_ctrl_peripheral_turn_on_main_tank_water_input                = SENSOR_IC_SIGNAL_FALSE;
+//                                         signal_ctrl_peripheral_turn_off_main_tank_water_input               = SENSOR_IC_SIGNAL_TRUE;
+//                                         //turn off water output
+//                                         signal_ctrl_peripheral_turn_on_main_tank_water_output               = SENSOR_IC_SIGNAL_FALSE;
+//                                         signal_ctrl_peripheral_turn_off_main_tank_water_output              = SENSOR_IC_SIGNAL_TRUE;
+                                    
+//                                         signal_ctrl_mixer_motors_turn_on                                    = SENSOR_IC_SIGNAL_TRUE;
+//                                         signal_ctrl_ph_disable_wl_unit                                      = SENSOR_IC_SIGNAL_FALSE;
+//                                     }else
+//                                     {
+//                                         signal_ctrl_mixer_motors_turn_on                                    = SENSOR_IC_SIGNAL_FALSE;
+//                                         ph_achieved_targeted_time = true;
+//                                     }
+//                                 }
+//                             }else
+//                             {
+//                                 //turn off water input
+//                                 signal_ctrl_peripheral_turn_on_main_tank_water_input                = SENSOR_IC_SIGNAL_FALSE;
+//                                 signal_ctrl_peripheral_turn_off_main_tank_water_input               = SENSOR_IC_SIGNAL_TRUE;
+//                                 //turn off water output
+//                                 signal_ctrl_peripheral_turn_on_main_tank_water_output               = SENSOR_IC_SIGNAL_FALSE;
+//                                 signal_ctrl_peripheral_turn_off_main_tank_water_output              = SENSOR_IC_SIGNAL_FALSE;
+
+//                                 signal_ctrl_mixer_motors_turn_on                                    = SENSOR_IC_SIGNAL_FALSE;
+
+//                                 signal_ctrl_ph_disable_wl_unit                                      = SENSOR_IC_SIGNAL_FALSE;
+//                             }
+//                         }
+//                     }
+//                 }
+//                 ph_app_current_state = PH_CALCULATE_ADDED_PH_VOL_DIFF_ON_TANK;
+//                 if(ph_achieved_targeted_time == true)
+//                 {
+//                     ph_increase_get_current_time_assigned = false;
+//                     ph_app_current_state = PH_CALCULATE_PH_ADJ_VOLUME;
+//                 }
+//             }
+//                 break;
+//             case PH_CALCULATE_ADDED_PH_VOL_DIFF_ON_TANK:
+//             {
+//                 //this part is for dosing diagnsostics
+//                 if(signal_data_set_ph_difference_data > 0)
+//                 {
+//                     if(check_the_dosing_process_counter < 100)
+//                     {
+//                         check_the_dosing_process_counter++;
+//                     }else
+//                     {
+//                         check_the_dosing_process_counter = 0;
+//                         if(place_to_buffer < 32)
+//                         {
+//                             volume_buffer_mean_value  = 0;
+//                             ph_diff_buffer_mean_value = 0;
+//                             calculated_volume_buffer[place_to_buffer] = signal_data_set_ph_req_volume;
+//                             calculated_ph_diff_buffer[place_to_buffer] = signal_data_set_ph_difference_data;
+//                             for(for_loop_counter = 0; for_loop_counter < 32; for_loop_counter++)
+//                             {
+//                                 volume_buffer_sum  += calculated_volume_buffer[for_loop_counter];
+//                                 ph_diff_buffer_sum += calculated_ph_diff_buffer[for_loop_counter];
+//                             }
+//                             volume_buffer_mean_value  = volume_buffer_sum / 32;
+//                             ph_diff_buffer_mean_value = ph_diff_buffer_sum / 32;
+//                             place_to_buffer++;
+//                         }else
+//                         {
+//                             place_to_buffer = 0;
+//                         }
+//                     }
+//                 }
+
+//                 if(signal_data_set_ph_difference_data < 0)
+//                 {
+//                     if(check_the_dosing_process_counter < 100)
+//                     {
+//                         check_the_dosing_process_counter++;
+//                     }else
+//                     {
+//                         check_the_dosing_process_counter = 0;
+//                         if(place_to_buffer < 32)
+//                         {
+//                             volume_buffer_mean_value  = 0;
+//                             ph_diff_buffer_mean_value = 0;
+//                             calculated_volume_buffer[place_to_buffer] = signal_data_set_ph_req_volume;
+//                             calculated_ph_diff_buffer[place_to_buffer] = signal_data_set_ph_difference_data;
+//                             for(for_loop_counter = 0; for_loop_counter < 32; for_loop_counter++)
+//                             {
+//                                 volume_buffer_sum  += calculated_volume_buffer[for_loop_counter];
+//                                 ph_diff_buffer_sum += calculated_ph_diff_buffer[for_loop_counter];
+//                             }
+//                             volume_buffer_mean_value  = volume_buffer_sum / 32;
+//                             ph_diff_buffer_mean_value = ph_diff_buffer_sum / 32;
+//                             place_to_buffer++;
+//                         }else
+//                         {
+//                             place_to_buffer = 0;
+//                         }
+//                     }
+//                 }
+//                 ph_app_current_state = PH_EXE_PUMPS;
+
+//             }
+//                 break;
+    
+//             default:
+//             {
+    
+//             }
+//                 break;
+//         }
+//     }
+// }

@@ -1,0 +1,277 @@
+
+void EC_EXE_APPLICATION(void)
+{
+    if(signal_ctrl_water_level_start_ph_ec_unit == SENSOR_IC_SIGNAL_TRUE && signal_ctrl_water_level_stop_ph_ec_unit == SENSOR_IC_SIGNAL_FALSE)
+    {
+        signal_data_get_ec_water_volume_data = (float)signal_data_get_tank_capacity;
+        switch (ec_app_current_state)
+        {
+            case EC_CALCULATE_EC_ADJ_VOLUME:
+            {
+                //set the ec calculated differece
+                signal_data_set_ec_difference_data  = calculate_ec_adjustment(signal_data_get_target_ec_data, signal_data_get_ec_data, signal_data_get_ec_concentration_data, signal_data_get_ec_water_volume_data);
+                //set the calculated req ec concentration volume
+                signal_data_set_ec_req_volume       = calculate_solution_volume(signal_data_get_target_ec_data, signal_data_get_ec_data, signal_data_get_ec_concentration_data, signal_data_get_ec_water_volume_data);
+                if(signal_data_set_ec_difference_data > EC_DIFF_TOLERANCE_NEG && signal_data_set_ec_difference_data < EC_DIFF_TOLERANCE_POS)
+                {
+                    signal_ctrl_pipe_water_enable_from_ec = SENSOR_IC_SIGNAL_TRUE;
+                }else
+                {
+                    signal_ctrl_pipe_water_enable_from_ec = SENSOR_IC_SIGNAL_FALSE;
+                }
+                //add the next state
+                ec_app_current_state = EC_EXE_PUMPS;
+            }
+                break;
+            case EC_EXE_PUMPS:
+            {
+                if(ec_increase_get_current_time_assigned == false)
+                {
+                    //if difference is positive means that activate EC pumps
+                    if(signal_data_set_ec_difference_data > 0)
+                    {
+                        signal_ctrl_ec_disable_wl_unit = SENSOR_IC_SIGNAL_FALSE;
+
+                        if(signal_data_set_ec_difference_data > EC_DIFF_TOLERANCE_POS)
+                        {
+                            reference_time = signal_data_get_rtc_data;
+                            //calculate required total time here 
+                            //volume/motor_cap + 200s
+                            required_time_for_ec_dosing = calculate_active_time_of_pump(signal_data_set_ec_req_volume);
+                            ec_increase_get_current_time_assigned = true;
+                            //if first time activate ready for motor operation
+                            signal_ctrl_peripheral_turn_on_ec_pump = SENSOR_IC_SIGNAL_TRUE;
+                            signal_ctrl_mixer_motors_turn_on       = SENSOR_IC_SIGNAL_TRUE;
+                            ec_prev_diff_position = EC_POS_POSITIVE;
+                        }else
+                        {
+                            signal_ctrl_peripheral_turn_on_ec_pump = SENSOR_IC_SIGNAL_FALSE;
+                            signal_ctrl_mixer_motors_turn_on        = SENSOR_IC_SIGNAL_FALSE;
+                            ec_prev_diff_position = EC_POS_POSITIVE;
+                        }
+                    }
+                    //if difference is negative means that activate water in and out relays
+                    if(signal_data_set_ec_difference_data < 0)
+                    {
+                        if(signal_data_set_ec_difference_data < EC_DIFF_TOLERANCE_NEG)
+                        {
+                            reference_time = signal_data_get_rtc_data;
+                            required_time_for_ec_dosing = calculate_active_time_of_pump(signal_data_set_ec_req_volume);
+                            ec_increase_get_current_time_assigned = true;
+                            signal_ctrl_ec_disable_wl_unit = SENSOR_IC_SIGNAL_TRUE;
+                            //turn on water output
+                            signal_ctrl_peripheral_turn_on_main_tank_water_output                   = SENSOR_IC_SIGNAL_TRUE;
+                            signal_ctrl_peripheral_turn_off_main_tank_water_output                  = SENSOR_IC_SIGNAL_FALSE;
+                            if(signal_data_get_water_level_data < 30)
+                            {
+                                //turn off water input
+                                signal_ctrl_peripheral_turn_on_main_tank_water_input                = SENSOR_IC_SIGNAL_FALSE;
+                                signal_ctrl_peripheral_turn_off_main_tank_water_input               = SENSOR_IC_SIGNAL_TRUE;
+                            }else
+                            {
+                                //turn on water input
+                                signal_ctrl_peripheral_turn_on_main_tank_water_input                = SENSOR_IC_SIGNAL_TRUE;
+                                signal_ctrl_peripheral_turn_off_main_tank_water_input               = SENSOR_IC_SIGNAL_FALSE;
+                            }
+                            signal_ctrl_mixer_motors_turn_on                                        = SENSOR_IC_SIGNAL_TRUE;
+                            ec_prev_diff_position = EC_POS_NEGATIVE;
+                        }else
+                        {
+                            ec_prev_diff_position = EC_POS_NEGATIVE;
+                            signal_ctrl_ec_disable_wl_unit                                          = SENSOR_IC_SIGNAL_FALSE;
+                            signal_ctrl_mixer_motors_turn_on                                        = SENSOR_IC_SIGNAL_FALSE;
+                        }
+                    }
+                }else
+                {
+                    //if difference is positive means that activate EC pumps
+                    if(signal_data_set_ec_difference_data > 0)
+                    {
+                        ec_current_diff_position = EC_POS_POSITIVE;
+                        if(ec_current_diff_position == ec_prev_diff_position)
+                        {
+                            signal_ctrl_ec_disable_wl_unit = SENSOR_IC_SIGNAL_FALSE;
+
+                            if(signal_data_set_ec_difference_data > EC_DIFF_TOLERANCE_POS)
+                            {
+                                //calculate the time which elapsed and compare with target time
+                                //if first time activate ready for motor operation
+                                calculated_time_difference = timeToSeconds(calculateTimeDifference(reference_time, signal_data_get_rtc_data));
+                                if(calculated_time_difference < required_time_for_ec_dosing)
+                                {
+                                    signal_ctrl_peripheral_turn_on_ec_pump  = SENSOR_IC_SIGNAL_TRUE;
+                                    signal_ctrl_mixer_motors_turn_on        = SENSOR_IC_SIGNAL_TRUE;
+                                }else
+                                {
+                                    //wait for mixing time now
+                                    if(calculated_time_difference < (required_time_for_ec_dosing + signal_data_get_mixing_time))
+                                    {
+                                        signal_ctrl_peripheral_turn_on_ec_pump = SENSOR_IC_SIGNAL_FALSE;
+                                        signal_ctrl_mixer_motors_turn_on        = SENSOR_IC_SIGNAL_TRUE;
+                                    }else
+                                    {
+                                        signal_ctrl_mixer_motors_turn_on        = SENSOR_IC_SIGNAL_FALSE;
+                                        ec_achieved_targeted_time = true;
+                                    }
+                                }
+                            }else
+                            {
+                                ec_achieved_targeted_time = true;
+                                signal_ctrl_peripheral_turn_on_ec_pump = SENSOR_IC_SIGNAL_FALSE;
+                                signal_ctrl_mixer_motors_turn_on        = SENSOR_IC_SIGNAL_FALSE;
+                            }
+                        }else
+                        {
+                            signal_ctrl_peripheral_turn_on_ec_pump = SENSOR_IC_SIGNAL_FALSE;
+                            signal_ctrl_mixer_motors_turn_on        = SENSOR_IC_SIGNAL_FALSE;
+                            ec_increase_get_current_time_assigned = false;
+                        }
+                        
+                    }
+                    //if difference is negative means that activate water in and out relays
+                    if(signal_data_set_ec_difference_data < 0)
+                    {
+                        ec_current_diff_position = EC_POS_NEGATIVE;
+                        if(ec_current_diff_position == ec_prev_diff_position)
+                        {
+                            if(signal_data_set_ec_difference_data < EC_DIFF_TOLERANCE_NEG)
+                            {
+                                calculated_time_difference = timeToSeconds(calculateTimeDifference(reference_time, signal_data_get_rtc_data));
+                                if(calculated_time_difference < required_time_for_ec_dosing)
+                                {
+                                    signal_ctrl_ec_disable_wl_unit = SENSOR_IC_SIGNAL_TRUE;
+                                    //turn on water output
+                                    signal_ctrl_peripheral_turn_on_main_tank_water_output               = SENSOR_IC_SIGNAL_TRUE;
+                                    signal_ctrl_peripheral_turn_off_main_tank_water_output              = SENSOR_IC_SIGNAL_FALSE;
+                                    signal_ctrl_mixer_motors_turn_on                                    = SENSOR_IC_SIGNAL_TRUE;
+                                    if(signal_data_get_water_level_data < 30)
+                                    {
+                                        //turn off water input
+                                        signal_ctrl_peripheral_turn_on_main_tank_water_input                = SENSOR_IC_SIGNAL_FALSE;
+                                        signal_ctrl_peripheral_turn_off_main_tank_water_input               = SENSOR_IC_SIGNAL_TRUE;
+                                    }else
+                                    {
+                                        //turn on water input
+                                        signal_ctrl_peripheral_turn_on_main_tank_water_input                = SENSOR_IC_SIGNAL_TRUE;
+                                        signal_ctrl_peripheral_turn_off_main_tank_water_input               = SENSOR_IC_SIGNAL_FALSE;
+                                    }
+                                }else
+                                {
+                                    //wait for mixing time now
+                                    if(calculated_time_difference < (required_time_for_ec_dosing + signal_data_get_mixing_time))
+                                    {
+                                        //turn off water input
+                                        signal_ctrl_peripheral_turn_on_main_tank_water_input                = SENSOR_IC_SIGNAL_FALSE;
+                                        signal_ctrl_peripheral_turn_off_main_tank_water_input               = SENSOR_IC_SIGNAL_TRUE;
+                                        //turn off water output
+                                        signal_ctrl_peripheral_turn_on_main_tank_water_output               = SENSOR_IC_SIGNAL_FALSE;
+                                        signal_ctrl_peripheral_turn_off_main_tank_water_output              = SENSOR_IC_SIGNAL_TRUE;
+
+                                        signal_ctrl_mixer_motors_turn_on                                    = SENSOR_IC_SIGNAL_TRUE;
+                                        signal_ctrl_ec_disable_wl_unit                                      = SENSOR_IC_SIGNAL_FALSE;
+                                    }else
+                                    {
+                                        signal_ctrl_mixer_motors_turn_on                                    = SENSOR_IC_SIGNAL_FALSE;
+                                        ec_achieved_targeted_time = true;
+                                    }
+                                }
+                            }else
+                            {
+                                //turn off water input
+                                signal_ctrl_peripheral_turn_on_main_tank_water_input                = SENSOR_IC_SIGNAL_FALSE;
+                                signal_ctrl_peripheral_turn_off_main_tank_water_input               = SENSOR_IC_SIGNAL_TRUE;
+                                //turn off water output
+                                signal_ctrl_peripheral_turn_on_main_tank_water_output               = SENSOR_IC_SIGNAL_FALSE;
+                                signal_ctrl_peripheral_turn_off_main_tank_water_output              = SENSOR_IC_SIGNAL_FALSE;
+
+                                signal_ctrl_mixer_motors_turn_on                                    = SENSOR_IC_SIGNAL_FALSE;
+
+                                signal_ctrl_ec_disable_wl_unit = SENSOR_IC_SIGNAL_FALSE;
+                            }
+                        }
+                    }
+                }
+                ec_app_current_state = EC_CALCULATE_ADDED_EC_VOL_DIFF_ON_TANK;
+
+                if(ec_achieved_targeted_time == true)
+                {
+                    ec_increase_get_current_time_assigned = false;
+                    ec_app_current_state = EC_CALCULATE_EC_ADJ_VOLUME;
+
+                }
+                
+            }
+                break;
+            case EC_CALCULATE_ADDED_EC_VOL_DIFF_ON_TANK:
+            {
+                //this part is for dosing diagnsostics
+                if(signal_data_set_ec_difference_data > 0)
+                {
+                    if(check_the_dosing_process_counter < 1000)
+                    {
+                        check_the_dosing_process_counter++;
+                    }else
+                    {
+                        check_the_dosing_process_counter = 0;
+                        if(place_to_buffer < 32)
+                        {
+                            volume_buffer_mean_value  = 0;
+                            ec_diff_buffer_mean_value = 0;
+                            calculated_volume_buffer[place_to_buffer] = signal_data_set_ec_req_volume;
+                            calculated_ec_diff_buffer[place_to_buffer] = signal_data_set_ec_difference_data;
+                            for(for_loop_counter = 0; for_loop_counter < 32; for_loop_counter++)
+                            {
+                                volume_buffer_sum  += calculated_volume_buffer[for_loop_counter];
+                                ec_diff_buffer_sum += calculated_ec_diff_buffer[for_loop_counter];
+                            }
+                            volume_buffer_mean_value  = volume_buffer_sum / 32;
+                            ec_diff_buffer_mean_value = ec_diff_buffer_sum / 32;
+                            place_to_buffer++;
+                        }else
+                        {
+                            place_to_buffer = 0;
+                        }
+                    }
+                }
+
+                if(signal_data_set_ec_difference_data < 0)
+                {
+                    if(check_the_dosing_process_counter < 1000)
+                    {
+                        check_the_dosing_process_counter++;
+                    }else
+                    {
+                        check_the_dosing_process_counter = 0;
+                        if(place_to_buffer < 32)
+                        {
+                            volume_buffer_mean_value  = 0;
+                            ec_diff_buffer_mean_value = 0;
+                            calculated_volume_buffer[place_to_buffer] = signal_data_set_ec_req_volume;
+                            calculated_ec_diff_buffer[place_to_buffer] = signal_data_set_ec_difference_data;
+                            for(for_loop_counter = 0; for_loop_counter < 32; for_loop_counter++)
+                            {
+                                volume_buffer_sum  += calculated_volume_buffer[for_loop_counter];
+                                ec_diff_buffer_sum += calculated_ec_diff_buffer[for_loop_counter];
+                            }
+                            volume_buffer_mean_value  = volume_buffer_sum / 32;
+                            ec_diff_buffer_mean_value = ec_diff_buffer_sum / 32;
+                            place_to_buffer++;
+                        }else
+                        {
+                            place_to_buffer = 0;
+                        }
+                    }
+                }
+                ec_app_current_state = EC_EXE_PUMPS;
+
+            }
+                break;
+    
+            default:
+            {
+    
+            }
+                break;
+        }
+    }
+}

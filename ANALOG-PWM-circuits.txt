@@ -1,0 +1,3 @@
+https://visual555.tardate.com/
+ne555 analog to pwm conversion
+6n137 optocoupler

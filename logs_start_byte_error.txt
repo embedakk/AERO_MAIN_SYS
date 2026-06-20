@@ -1,0 +1,1780 @@
+Initializations done...
+MAIN LOOP...
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 8 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 9 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 10 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 11 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 0, Duty 100.00
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 20171, Duty -9739.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 2 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 3 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 4 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 5 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 6 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 7 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 8 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 9 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 10 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 11 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51
+start_byte error
+frame number 0 => 0x00 0x00 0x00 0x00 0x00
+start_byte error
+frame number 1 => 0x00 0x00 0x00 0x00 0x00
+EC => difference 0, Duty 100.00
+PH => difference 1, Duty 99.51

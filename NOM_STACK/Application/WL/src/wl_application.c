@@ -79,6 +79,13 @@ void WL_EXE_APPLICATION(void)
                     signal_ctrl_water_level_start_ph_ec_unit                = SENSOR_IC_SIGNAL_TRUE;
                     signal_ctrl_water_level_stop_ph_ec_unit                 = SENSOR_IC_SIGNAL_FALSE;
 
+                    signal_ctrl_peripheral_turn_on_main_tank_water_input    = SENSOR_IC_SIGNAL_FALSE;
+                    signal_ctrl_peripheral_turn_off_main_tank_water_input   = SENSOR_IC_SIGNAL_TRUE;
+                
+                    // be sure that  water out relay is deactivated
+                    signal_ctrl_peripheral_turn_on_main_tank_water_output   = SENSOR_IC_SIGNAL_FALSE;
+                    signal_ctrl_peripheral_turn_off_main_tank_water_output  = SENSOR_IC_SIGNAL_TRUE;
+
                     wl_sm_current_state = WL_IDLE_STATE;
                 }
                     break;

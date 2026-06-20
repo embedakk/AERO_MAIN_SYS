@@ -16,18 +16,22 @@
 extern DS1302_DateTime *signal_data_get_rtc_data;
 extern DS1302_DateTime *signal_data_set_rtc_data;
 
+
+
+
 DS1302_DateTime ledStart; 
 DS1302_DateTime ledOff;
 
 // Function to calculate LED turn-off time
 DS1302_DateTime calculateLEDTurnOffTime(DS1302_DateTime start, int durationHours) 
 {
+    DS1302_DateTime offTime;
     // Add hours, minutes, and seconds while handling rollover
-    end.hour = (start.hour + durationHours) % 24;
-    end.minute = start.minute;
-    end.second = start.second;
+    offTime.hour = (start.hour + durationHours) % 24;
+    offTime.minute = start.minute;
+    offTime.second = start.second;
 
-    return end;
+    return offTime;
 }
 
 void LED_CTRL_EXE_APPLICATION(void)
@@ -60,6 +64,7 @@ void LED_CTRL_EXE_APPLICATION(void)
         }
     }else
     {
+        signal_ctrl_led_turn_on_led = SENSOR_IC_SIGNAL_FALSE;
         signal_data_set_text_sys_status[0] = 'O';
         signal_data_set_text_sys_status[1] = 'F';
         signal_data_set_text_sys_status[2] = 'F';

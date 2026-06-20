@@ -23,7 +23,7 @@
 
 #define         WL_LOW_THRESHOLD_CM         105 
 #define         WL_CRITICAL_THRESHOLD_CM    23 
-#define         WL_HIGH_THRESHOLD_CM        28
+#define         WL_HIGH_THRESHOLD_CM        33
 
 typedef enum 
 {

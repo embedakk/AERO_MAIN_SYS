@@ -16,6 +16,9 @@
 #include "esp_system.h"
 #include "esp_log.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define         INIT_TAG         "INIT"
 
@@ -25,7 +28,6 @@
 /*
     Here put the pin numbers
 */
-
 
 void INIT_PH_EC_SENSORS(void);//put I2C COM init
 void INIT_RTC(void);
@@ -48,6 +50,8 @@ void INIT_UI(void);
 
 void INIT_PERIPHERALS(void);
 
-
+#ifdef __cplusplus
+}
+#endif
 
 #endif // INITIALIZATION_H

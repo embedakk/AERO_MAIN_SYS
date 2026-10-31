@@ -1,23 +1,10 @@
 #include "../inc/led_ctrl_application.h"
 #include "../../NOM_STACK/Signals/Sensors/inc/sensor_ic_signals.h"
-
-
-// typedef struct {
-//     uint8_t second;     //!< Second 0..59
-//     uint8_t minute;     //!< Minute 0..59
-//     uint8_t hour;       //!< Hour 0..23
-//     uint8_t dayWeek;    //!< Day of the week (0 as Sunday/ 1 as Monday)
-//     uint8_t dayMonth;   //!< Day of the month 1..31
-//     uint8_t month;      //!< Month 1..12
-//     uint16_t year;      //!< Year 2000..2099
-// } DS1302_DateTime;
+#include "../../NOM_STACK/Services/PUMP_IO_COM/inc/pump_io_com.h"
 
 //rtc
 extern DS1302_DateTime *signal_data_get_rtc_data;
 extern DS1302_DateTime *signal_data_set_rtc_data;
-
-
-
 
 DS1302_DateTime ledStart; 
 DS1302_DateTime ledOff;
@@ -25,9 +12,11 @@ DS1302_DateTime ledOff;
 // Function to calculate LED turn-off time
 DS1302_DateTime calculateLEDTurnOffTime(DS1302_DateTime start, int durationHours) 
 {
-    DS1302_DateTime offTime;
-    // Add hours, minutes, and seconds while handling rollover
-    offTime.hour = (start.hour + durationHours) % 24;
+    DS1302_DateTime offTime = {0};
+    if (durationHours < 0) {
+        durationHours = 0;
+    }
+    offTime.hour   = (uint8_t)(((int)start.hour + durationHours) % 24);
     offTime.minute = start.minute;
     offTime.second = start.second;
 
@@ -36,38 +25,59 @@ DS1302_DateTime calculateLEDTurnOffTime(DS1302_DateTime start, int durationHours
 
 void LED_CTRL_EXE_APPLICATION(void)
 {
-    if(signal_ctrl_system_start == SENSOR_IC_SIGNAL_TRUE || signal_ctrl_system_continue == SENSOR_IC_SIGNAL_TRUE)
-    {
-        signal_data_set_text_sys_status[0] = 'O';
-        signal_data_set_text_sys_status[1] = 'N';
-        signal_data_set_text_sys_status[2] = ' ';
-        ledStart.hour = 22;
-        ledStart.minute = 1;
-        ledStart.second = 1;
-        ledOff = calculateLEDTurnOffTime(ledStart, (int)signal_data_get_turn_on_time);
-    
-        // Check if LED should turn off
-        if (signal_data_get_rtc_data->hour == ledOff.hour && signal_data_get_rtc_data->minute == ledOff.minute &&
-            signal_data_get_rtc_data->second == ledOff.second) 
-        {
-            //keep turned off leds
-            signal_ctrl_led_turn_on_led = SENSOR_IC_SIGNAL_FALSE;
-            signal_data_set_text_led_status[0] = 'O';
-            signal_data_set_text_led_status[1] = 'F';
-            signal_data_set_text_led_status[2] = 'F';
-        }else
-        {
-            signal_ctrl_led_turn_on_led = SENSOR_IC_SIGNAL_TRUE;
-            signal_data_set_text_led_status[0] = 'O';
-            signal_data_set_text_led_status[1] = 'N';
-            signal_data_set_text_led_status[2] = ' ';
-        }
-    }else
+    bool sys_requested = (signal_ctrl_system_start == SENSOR_IC_SIGNAL_TRUE ||
+                          signal_ctrl_system_continue == SENSOR_IC_SIGNAL_TRUE) &&
+                         (signal_data_set_selected_fruit < 17U);
+
+    if (!sys_requested)
     {
         signal_ctrl_led_turn_on_led = SENSOR_IC_SIGNAL_FALSE;
-        signal_data_set_text_sys_status[0] = 'O';
-        signal_data_set_text_sys_status[1] = 'F';
-        signal_data_set_text_sys_status[2] = 'F';
+        memcpy(signal_data_set_text_led_status, "OFF", 4);
+        memcpy(signal_data_set_text_sys_status, "OFF", 4);
+        return;
     }
-    return;
+
+    memcpy(signal_data_set_text_sys_status, "ON ", 4);
+
+    if (!PUMP_IO_COM_is_link_healthy() || signal_data_get_rtc_data == NULL)
+    {
+        signal_ctrl_led_turn_on_led = SENSOR_IC_SIGNAL_FALSE;
+        memcpy(signal_data_set_text_led_status, "OFF", 4);
+        return;
+    }
+
+    ledStart.hour = 22;
+    ledStart.minute = 1;
+    ledStart.second = 1;
+
+    int durationHours = (int)signal_data_get_turn_on_time;
+    if (durationHours <= 0) {
+        signal_ctrl_led_turn_on_led = SENSOR_IC_SIGNAL_FALSE;
+        memcpy(signal_data_set_text_led_status, "OFF", 4);
+        return;
+    }
+    if (durationHours >= 24) {
+        signal_ctrl_led_turn_on_led = SENSOR_IC_SIGNAL_TRUE;
+        memcpy(signal_data_set_text_led_status, "ON ", 4);
+        return;
+    }
+
+    ledOff = calculateLEDTurnOffTime(ledStart, durationHours);
+
+    int startSec = ((int)ledStart.hour * 3600) + ((int)ledStart.minute * 60) + (int)ledStart.second;
+    int nowSec   = ((int)signal_data_get_rtc_data->hour * 3600) +
+                   ((int)signal_data_get_rtc_data->minute * 60) +
+                   (int)signal_data_get_rtc_data->second;
+    int elapsedSec = (nowSec - startSec + 86400) % 86400;
+
+    if (elapsedSec < (durationHours * 3600))
+    {
+        signal_ctrl_led_turn_on_led = SENSOR_IC_SIGNAL_TRUE;
+        memcpy(signal_data_set_text_led_status, "ON ", 4);
+    }
+    else
+    {
+        signal_ctrl_led_turn_on_led = SENSOR_IC_SIGNAL_FALSE;
+        memcpy(signal_data_set_text_led_status, "OFF", 4);
+    }
 }

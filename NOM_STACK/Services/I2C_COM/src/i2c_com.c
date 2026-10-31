@@ -1,8 +1,13 @@
 #include "../inc/i2c_com.h"
 
+esp_err_t internal_i2c_driver_status = ESP_OK;
+uint8_t i2c_com_sensor_data_input[10] = {0};
+uint16_t i2c_com_ph_data = 0;
+uint16_t i2c_com_ec_data = 0;
+int i2c_com_sensor_data_input_len = 0;
+
 void I2C_COM_INIT(void)
 {
-    
     i2c_config_t conf = 
     {
         .mode = I2C_MODE_SLAVE,
@@ -105,10 +110,12 @@ esp_err_t i2c_dev_read(const i2c_dev_t *dev, const void *out_data, size_t out_si
 
 	esp_err_t res = i2c_master_cmd_begin(dev->port, cmd, I2CDEV_TIMEOUT / portTICK_PERIOD_MS);
 	if (res != ESP_OK)
+	{
 #ifdef I2C_COM_LOGS
 		ESP_LOGE(I2C_COM_TAG, "I2C_NUM_1 Could not read from device [0x%02x at %d]: %d", dev->addr, dev->port, res);
 #endif
-        i2c_cmd_link_delete(cmd);
+	}
+	i2c_cmd_link_delete(cmd);
 
 	return res;
 }
@@ -126,10 +133,12 @@ esp_err_t i2c_dev_write(const i2c_dev_t *dev, const void *out_reg, size_t out_re
 	i2c_master_stop(cmd);
 	esp_err_t res = i2c_master_cmd_begin(dev->port, cmd, I2CDEV_TIMEOUT / portTICK_PERIOD_MS);
 	if (res != ESP_OK)
+	{
 #ifdef I2C_COM_LOGS
 		ESP_LOGE(I2C_COM_TAG, "I2C_NUM_1 Could not write to device [0x%02x at %d]: %d", dev->addr, dev->port, res);
 #endif
-        i2c_cmd_link_delete(cmd);
+	}
+	i2c_cmd_link_delete(cmd);
 
 	return res;
 }
@@ -137,7 +146,7 @@ esp_err_t i2c_dev_write(const i2c_dev_t *dev, const void *out_reg, size_t out_re
 uint8_t *I2C_COM_GET_SENSOR_DATA(void)
 {
     // i2c_com_sensor_data_input_len = i2c_slave_read_buffer(I2C_COM_I2C_SLAVE_NUM, i2c_com_sensor_data_input, I2C_COM_I2C_BUF_LEN, pdMS_TO_TICKS(10));
-    if (i2c_com_sensor_data_input_len > 0) 
+    if (i2c_com_sensor_data_input_len > 0 && i2c_com_sensor_data_input_len < (int)sizeof(i2c_com_sensor_data_input)) 
     {
         i2c_com_sensor_data_input[i2c_com_sensor_data_input_len] = '\0';  // Null-terminate received string
 #ifdef I2C_COM_LOGS

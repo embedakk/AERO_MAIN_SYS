@@ -18,6 +18,9 @@
 #include "driver/gpio.h"
 #include "esp32/rom/ets_sys.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define         WTEMP_SENSOR_TAG         "WTEMP_SENSOR"
 
@@ -94,19 +97,23 @@ bool ds18b20_readScratchPad(const DeviceAddress *deviceAddress, uint8_t *scratch
 void ds18b20_select(const DeviceAddress *address);
 uint8_t ds18b20_crc8(const uint8_t *addr, uint8_t len);
 bool ds18b20_isAllZeros(const uint8_t * const scratchPad);
-bool isConversionComplete();
-uint16_t millisToWaitForConversion();
+bool isConversionComplete(void);
+uint16_t millisToWaitForConversion(void);
 
-void ds18b20_requestTemperatures();
+void ds18b20_requestTemperatures(void);
 float ds18b20_getTempF(const DeviceAddress *deviceAddress);
 float ds18b20_getTempC(const DeviceAddress *deviceAddress);
 int16_t calculateTemperature(const DeviceAddress *deviceAddress, uint8_t* scratchPad);
 float ds18b20_get_temp(void);
 
-void reset_search();
+void reset_search(void);
 bool search(uint8_t *newAddr, bool search_mode);
 
 void WTEMP_SENSOR_INIT(void);
 float WTEMP_SENSOR_GET_DATA(void);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif//WTEMP_SENSOR_H

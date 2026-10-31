@@ -12,10 +12,10 @@
 //signals
 #include "../../NOM_STACK/Signals/Sensors/inc/sensor_ic_signals.h"
 
+uint8_t *normal_op_i2c_com_ph_ec_sensor_data = NULL;
 
 void NORMAL_OP_GET_I2C_COM_PH_EC_SENSOR_DATA(void)
 {
-    // normal_op_i2c_com_ph_ec_sensor_data = I2C_COM_GET_SENSOR_DATA();
 #ifdef NORMAL_OP_LOGS
     ESP_LOGI(NORMAL_OP_TAG, "NORMAL_OP_GET_I2C_COM_PH_EC_SENSOR_DATA...");
 #endif
@@ -24,8 +24,12 @@ void NORMAL_OP_GET_I2C_COM_PH_EC_SENSOR_DATA(void)
 
 void NORMAL_OP_GET_PH_EC_SENSORS(float *ph_data, float *ec_data)
 {
-    *ph_data = PH_SENSOR_READ();
-    *ec_data = EC_SENSOR_READ();
+    if (ph_data != NULL) {
+        *ph_data = PH_SENSOR_READ();
+    }
+    if (ec_data != NULL) {
+        *ec_data = EC_SENSOR_READ();
+    }
 #ifdef NORMAL_OP_LOGS
     ESP_LOGI(NORMAL_OP_TAG, "NORMAL_OP_GET_PH_EC_SENSORS...");
 #endif
@@ -75,14 +79,12 @@ float NORMAL_OP_GET_WATER_LEVEL_PERCENTAGE(void)
 
 void NORMAL_OP_SET_PH_EC_PUMPS(bool ph_pump_state, bool ec_pump_state)
 {
-    //mix pump is not defined yet
     if(ph_pump_state == true)
     {
         PUMP_IO_COM_send_pump_command(INTERFACE_PH_PUMPS, COMMAND_ON_OR_UP);
     }else
     {
         PUMP_IO_COM_send_pump_command(INTERFACE_PH_PUMPS, COMMAND_PH_UP_OFF);
-        // PUMP_IO_COM_send_pump_command(INTERFACE_PH_PUMPS, COMMAND_PH_DOWN_OFF);
     }
 
     if(ec_pump_state == true)
@@ -91,9 +93,7 @@ void NORMAL_OP_SET_PH_EC_PUMPS(bool ph_pump_state, bool ec_pump_state)
     }else
     {
         PUMP_IO_COM_send_pump_command(INTERFACE_EC_PUMPS, COMMAND_EC_UP_OFF);
-        // PUMP_IO_COM_send_pump_command(INTERFACE_EC_PUMPS, COMMAND_EC_UP_OFF);
     }
-    //assign the values to signals 
 #ifdef NORMAL_OP_LOGS
     ESP_LOGI(NORMAL_OP_TAG, "NORMAL_OP_SET_PH_EC_PUMPS...");
 #endif
@@ -193,6 +193,7 @@ float NORMAL_OP_GET_ROOM_HUMIDITY(void)
 
 void NORMAL_OP_SET_ROOM_AIR_CONDITIONER(float room_air_conditioner_data)
 {
+    (void)room_air_conditioner_data;
 #ifdef NORMAL_OP_LOGS
     ESP_LOGI(NORMAL_OP_TAG, "NORMAL_OP_SET_ROOM_AIR_CONDITIONER...");
 #endif
@@ -216,13 +217,12 @@ void NORMAL_OP_SET_ROOM_LEDS(bool room_leds_state)
 
 void NORMAL_OP_SET_PIPE_VENTILATION(bool pipe_ventilation_state)
 {
-    //ventilation will be same with leds so delete but for now leave here for any case
+    (void)pipe_ventilation_state;
 #ifdef NORMAL_OP_LOGS
     ESP_LOGI(NORMAL_OP_TAG, "NORMAL_OP_SET_PIPE_VENTILATION...");
 #endif
     return;
 }
-
 
 void NORMAL_OP_EC_PID(void)
 {
@@ -242,16 +242,15 @@ void NORMAL_OP_PH_PID(void)
 
 void NORMAL_OP_PH_CALIBRATION(void)
 {
-    //check all signals if are true and then lineer regression
-    if( signal_ctrl_system_cal_ph_low == SENSOR_IC_SIGNAL_TRUE && 
-        signal_ctrl_system_cal_ph_mid == SENSOR_IC_SIGNAL_TRUE &&
+    if( signal_ctrl_system_cal_ph_low == SENSOR_IC_SIGNAL_TRUE || 
+        signal_ctrl_system_cal_ph_mid == SENSOR_IC_SIGNAL_TRUE ||
         signal_ctrl_system_cal_ph_high == SENSOR_IC_SIGNAL_TRUE)
-        {
-            NORMAL_OP_PH_CALIBRATION_CALCULATE_LIN_REGRESSION_VALUES();
-            signal_ctrl_system_cal_ph_low = SENSOR_IC_SIGNAL_FALSE;
-            signal_ctrl_system_cal_ph_mid = SENSOR_IC_SIGNAL_FALSE;
-            signal_ctrl_system_cal_ph_high = SENSOR_IC_SIGNAL_FALSE;
-        }
+    {
+        NORMAL_OP_PH_CALIBRATION_CALCULATE_LIN_REGRESSION_VALUES();
+        signal_ctrl_system_cal_ph_low = SENSOR_IC_SIGNAL_FALSE;
+        signal_ctrl_system_cal_ph_mid = SENSOR_IC_SIGNAL_FALSE;
+        signal_ctrl_system_cal_ph_high = SENSOR_IC_SIGNAL_FALSE;
+    }
 #ifdef NORMAL_OP_LOGS
     ESP_LOGI(NORMAL_OP_TAG, "NORMAL_OP_PH_CALIBRATION...");
 #endif
@@ -260,18 +259,20 @@ void NORMAL_OP_PH_CALIBRATION(void)
 
 void NORMAL_OP_EC_CALIBRATION(void)
 {
-    //check only for mid
-    if( signal_ctrl_system_cal_ec_mid == SENSOR_IC_SIGNAL_TRUE )
+    if( signal_ctrl_system_cal_ec_low == SENSOR_IC_SIGNAL_TRUE ||
+        signal_ctrl_system_cal_ec_mid == SENSOR_IC_SIGNAL_TRUE ||
+        signal_ctrl_system_cal_ec_high == SENSOR_IC_SIGNAL_TRUE )
     {
         NORMAL_OP_EC_CALIBRATION_CALCULATE_LIN_REGRESSION_VALUES();
+        signal_ctrl_system_cal_ec_low = SENSOR_IC_SIGNAL_FALSE;
         signal_ctrl_system_cal_ec_mid = SENSOR_IC_SIGNAL_FALSE;
+        signal_ctrl_system_cal_ec_high = SENSOR_IC_SIGNAL_FALSE;
     }
 #ifdef NORMAL_OP_LOGS
     ESP_LOGI(NORMAL_OP_TAG, "NORMAL_OP_EC_CALIBRATION...");
 #endif
     return;
 }
-
 
 void NORMAL_OP_PH_CALIBRATION_SET_LOW(void)
 {
@@ -321,13 +322,12 @@ void NORMAL_OP_EC_CALIBRATION_SET_HIGH(void)
     return;
 }
 
-
 float NORMAL_OP_PH_CALIBRATION_GET_VOLTAGE(void)
 {
 #ifdef NORMAL_OP_LOGS
     ESP_LOGI(NORMAL_OP_TAG, "NORMAL_OP_PH_CALIBRATION_GET_VOLTAGE...");
 #endif
-    return 0.0f;
+    return signal_data_set_ph_voltage;
 }
 
 float NORMAL_OP_EC_CALIBRATION_GET_VOLTAGE(void)
@@ -335,9 +335,8 @@ float NORMAL_OP_EC_CALIBRATION_GET_VOLTAGE(void)
 #ifdef NORMAL_OP_LOGS
     ESP_LOGI(NORMAL_OP_TAG, "NORMAL_OP_EC_CALIBRATION_GET_VOLTAGE...");
 #endif
-    return 0.0f;
+    return signal_data_set_ec_voltage;
 }
-
 
 void NORMAL_OP_PH_CALIBRATION_CALCULATE_LIN_REGRESSION_VALUES(void)
 {
@@ -350,6 +349,7 @@ void NORMAL_OP_PH_CALIBRATION_CALCULATE_LIN_REGRESSION_VALUES(void)
 
 void NORMAL_OP_EC_CALIBRATION_CALCULATE_LIN_REGRESSION_VALUES(void)
 {
+    EC_SENSOR_CALCULATE_LIN_REGRESSUION();
 #ifdef NORMAL_OP_LOGS
     ESP_LOGI(NORMAL_OP_TAG, "NORMAL_OP_EC_CALIBRATION_CALCULATE_LIN_REGRESSION_VALUES...");
 #endif

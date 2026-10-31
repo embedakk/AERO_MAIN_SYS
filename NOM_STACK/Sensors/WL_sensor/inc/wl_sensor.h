@@ -19,6 +19,11 @@
 
 #include <driver/gpio.h>
 #include <driver/dac.h>
+#include "esp32/rom/ets_sys.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define         WL_SENSOR_TAG         "WL_SENSOR"
 
@@ -38,11 +43,9 @@
 #define ROUNDTRIP 58
 #define MAX_DISTANCE_CM 500
 
-
 #define timeout_expired(start, len) ((uint32_t)(get_time_us() - (start)) >= (len))
 
 #define RETURN_CRTCAL(MUX, RES) do { portEXIT_CRITICAL(&MUX); return RES; } while(0)
-
 
 /**
  * Device descriptor
@@ -53,6 +56,8 @@ typedef struct
     gpio_num_t echo_pin;
 } ultrasonic_sensor_t;
 
+void ultrasonic_init(const ultrasonic_sensor_t *dev);
+esp_err_t ultrasonic_measure_cm(const ultrasonic_sensor_t *dev, uint32_t max_distance, uint32_t *distance);
 
 /**
  * Init ranging module
@@ -71,5 +76,9 @@ esp_err_t WL_SENSOR_ultrasonic_measure_cm(const ultrasonic_sensor_t *dev, uint32
 void WL_SENSOR_INIT(void);
 
 float WL_SENSOR_GET_DISTANCE_CM(void);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif //WL_SENSOR_H

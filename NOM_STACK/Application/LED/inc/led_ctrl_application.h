@@ -11,16 +11,21 @@
 
 #include "../../NOM_STACK/Sensors/RealTimeClock/inc/real_time_clock.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define         LED_CTRL_APPLICATION_TAG         "LED_CTRL_APPLICATION"
 
 #define         LED_CTRL_APPLICATION_LOGS
 #undef          LED_CTRL_APPLICATION_LOGS
 
-
-
 DS1302_DateTime calculateLEDTurnOffTime(DS1302_DateTime start, int durationHours);
 
 void LED_CTRL_EXE_APPLICATION(void);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif //LED_CTRL_APPLICATION_H

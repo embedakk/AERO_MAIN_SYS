@@ -34,30 +34,33 @@ typedef enum
 }ec_diff_pos;
 
 
-DS1302_DateTime *current_time;
-int required_time_for_ec_dosing;
-int calculated_time_difference;
+extern DS1302_DateTime *ec_current_time;
+extern int required_time_for_ec_dosing;
+extern int ec_calculated_time_difference;
 
-bool ec_first_shot_in_out_relays;
-float adjustment;
-float volumeToAdd;
-float first_shot_wl_data;
+extern bool ec_first_shot_in_out_relays;
+extern float ec_adjustment;
+extern float ec_volumeToAdd;
+extern float ec_first_shot_wl_data;
 
-uint16_t check_the_dosing_process_counter;
-uint8_t place_to_buffer;
-uint8_t for_loop_counter;
-float volume_buffer_sum, ec_diff_buffer_sum;
-float volume_buffer_mean_value, ec_diff_buffer_mean_value;
-float calculated_volume_buffer[32];
-float calculated_ec_diff_buffer[32];
+extern uint16_t ec_check_the_dosing_process_counter;
+extern uint8_t ec_place_to_buffer;
+extern uint8_t ec_for_loop_counter;
+extern float ec_volume_buffer_sum, ec_diff_buffer_sum;
+extern float ec_volume_buffer_mean_value, ec_diff_buffer_mean_value;
+extern float ec_calculated_volume_buffer[32];
+extern float ec_calculated_ec_diff_buffer[32];
 
-int timeToSeconds(DS1302_DateTime t);
-DS1302_DateTime secondsToTime(int totalSeconds);
-DS1302_DateTime calculateTimeDifference(DS1302_DateTime *start, DS1302_DateTime *end);
-int calculate_active_time_of_pump(float volume);
+int ec_timeToSeconds(DS1302_DateTime t);
+DS1302_DateTime ec_secondsToTime(int totalSeconds);
+DS1302_DateTime ec_calculateTimeDifference(DS1302_DateTime *start, DS1302_DateTime *end);
+int ec_calculate_active_time_of_pump(float volume);
 
 float calculate_solution_volume(float targetEC, float currentEC, float solutionEC, float tankVolume);
 float calculate_ec_adjustment(float targetEC, float currentEC, float concentrationFactor, float tankVolume);
+
+void calculate_added_vol_diff_ec(void);
+void exe_ec_pumps(void);
 
 void EC_EXE_APPLICATION(void);
 

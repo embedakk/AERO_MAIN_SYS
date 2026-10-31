@@ -17,7 +17,7 @@
 #define         LED_CTRL_APPLICATION_LOGS
 #undef          LED_CTRL_APPLICATION_LOGS
 
-DS1302_DateTime end;
+
 
 DS1302_DateTime calculateLEDTurnOffTime(DS1302_DateTime start, int durationHours);
 

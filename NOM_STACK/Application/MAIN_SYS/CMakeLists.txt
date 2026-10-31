@@ -7,4 +7,4 @@ set(main_sys_app_inc_dir
 idf_component_register(
     SRCS ${main_sys_srcs} 
     INCLUDE_DIRS ${main_sys_app_inc_dir}
-    PRIV_REQUIRES   RealTimeClock Sensors) 
+    PRIV_REQUIRES   RealTimeClock Sensors)

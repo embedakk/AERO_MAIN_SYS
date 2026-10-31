@@ -34,22 +34,22 @@ typedef enum
     PH_POS_POSITIVE
 }ph_diff_pos;
 
-DS1302_DateTime *current_time;
-int required_time_for_ph_dosing;
-int calculated_time_difference;
+extern DS1302_DateTime *ph_current_time;
+extern int required_time_for_ph_dosing;
+extern int ph_calculated_time_difference;
 
-bool ph_first_shot_in_out_relays;
-float adjustment;
-float volumeToAdd;
-float first_shot_wl_data;
+extern bool ph_first_shot_in_out_relays;
+extern float ph_adjustment;
+extern float ph_volumeToAdd;
+extern float ph_first_shot_wl_data;
 
-uint16_t check_the_dosing_process_counter;
-uint8_t place_to_buffer;
-uint8_t for_loop_counter;
-float volume_buffer_sum, ph_diff_buffer_sum;
-float volume_buffer_mean_value, ph_diff_buffer_mean_value;
-float calculated_volume_buffer[32];
-float calculated_ph_diff_buffer[32];
+extern uint16_t ph_check_the_dosing_process_counter;
+extern uint8_t ph_place_to_buffer;
+extern uint8_t ph_for_loop_counter;
+extern float ph_volume_buffer_sum, ph_ph_diff_buffer_sum;
+extern float ph_volume_buffer_mean_value, ph_ph_diff_buffer_mean_value;
+extern float ph_calculated_volume_buffer[32];
+extern float ph_calculated_ph_diff_buffer[32];
 
 int ph_timeToSeconds(DS1302_DateTime t);
 DS1302_DateTime ph_secondsToTime(int totalSeconds);
@@ -59,6 +59,8 @@ int ph_calculate_active_time_of_pump(float volume);
 double calculate_adjustment_volume(double tank_volume, double current_pH, double target_pH, double solution_conc);
 float calculate_ph_adjustment(float targetPH, float currentPH, float concentrationFactor, float tankVolume);
 
+void CALCULATE_ADDED_PH_VOL_DIFF_ON_TANK(void);
+void EXE_PUMPS(void);
 void PH_EXE_APPLICATION(void);
 
 #endif //PH_APPLICATION_H

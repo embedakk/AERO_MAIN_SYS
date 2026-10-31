@@ -214,6 +214,7 @@ void app_main()
 
     // xTaskCreate(task_scheduler, "Scheduler", 4096, NULL, 10, NULL);
     // INIT_PERIPHERALS();
+    ESP_LOGI("MAIN", "main branch APP STARTED");
     SCHEDULER_INIT();
     SCHEDULER_MAIN();
 }

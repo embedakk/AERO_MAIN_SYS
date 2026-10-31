@@ -11,6 +11,10 @@
 
 #include "../../NOM_STACK/Sensors/RealTimeClock/inc/real_time_clock.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define         EC_APPLICATION_TAG         "EC_APPLICATION"
 
 #define         EC_APPLICATION_LOGS
@@ -33,7 +37,6 @@ typedef enum
     EC_POS_POSITIVE
 }ec_diff_pos;
 
-
 extern DS1302_DateTime *ec_current_time;
 extern int required_time_for_ec_dosing;
 extern int ec_calculated_time_difference;
@@ -51,6 +54,10 @@ extern float ec_volume_buffer_mean_value, ec_diff_buffer_mean_value;
 extern float ec_calculated_volume_buffer[32];
 extern float ec_calculated_ec_diff_buffer[32];
 
+extern bool ec_increase_get_current_time_assigned;
+extern bool ec_achieved_targeted_time;
+extern ec_diff_pos ec_prev_diff_position;
+
 int ec_timeToSeconds(DS1302_DateTime t);
 DS1302_DateTime ec_secondsToTime(int totalSeconds);
 DS1302_DateTime ec_calculateTimeDifference(DS1302_DateTime *start, DS1302_DateTime *end);
@@ -61,7 +68,12 @@ float calculate_ec_adjustment(float targetEC, float currentEC, float concentrati
 
 void calculate_added_vol_diff_ec(void);
 void exe_ec_pumps(void);
+void EC_RESET_STATE(void);
 
 void EC_EXE_APPLICATION(void);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif //EC_APPLICATION_H

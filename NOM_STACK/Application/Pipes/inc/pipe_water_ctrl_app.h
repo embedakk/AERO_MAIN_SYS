@@ -11,6 +11,9 @@
 
 #include "../../NOM_STACK/Sensors/RealTimeClock/inc/real_time_clock.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define         PIPE_WATER_CTRL_APPLICATION_TAG         "PIPE_WATER_CTRL_APPLICATION"
 
@@ -21,6 +24,14 @@
 #define         PIPE_WATER_PUMP_OFF_TIME                7   
 #define         PIPE_WATER_RETURN_DELAY_TIME            2   // Minutes to wait for water to drain back
 
+extern int lastMin;
+extern bool pumpState;
+
+void PIPE_WATER_RESET_STATE(void);
 void PIPE_WATER_CTRL_EXE_APPLICATION(void);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // PIPE_WATER_CTRL_APPLICATION_H

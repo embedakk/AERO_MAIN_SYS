@@ -7,13 +7,12 @@
 #include "../../NOM_STACK/Sensors/WTEMP_sensor/inc/wtemp_sensor.h"
 #include "../../NOM_STACK/UI/DWIN_protocol/inc/dwin_protocol.h"
 #include "../../NOM_STACK/Sensors/RealTimeClock/inc/real_time_clock.h"
-#include "../../NOM_STACK/Services/PUMP_IO_COM/inc/pump_io_com.h"
 #include "../../NOM_STACK/Signals/Sensors/inc/sensor_ic_signals.h"
 
 void INIT_PH_EC_SENSORS(void)
 {
     // I2C_COM_INIT(); moved to pump_io_com
-    PH_SENSOR_INIT(); //for lineer regression
+    PH_SENSOR_INIT(); //for linear regression (uses NVS-loaded calibration)
     EC_SENSOR_INIT();
 #ifdef INIT_LOGS
     ESP_LOGI(INIT_TAG, "INIT_PH_EC_SENSORS...");
@@ -158,7 +157,6 @@ void INIT_BLE(void)
 void INIT_UI(void)
 {
     UI_INIT();
-    // ESP_LOGI(INIT_TAG, "INIT_UI...");
 #ifdef INIT_LOGS
     ESP_LOGI(INIT_TAG, "INIT_UI...");
 #endif
@@ -167,6 +165,8 @@ void INIT_UI(void)
 
 void INIT_PERIPHERALS(void)
 {
+    /* Initialize signals, mutex, and NVS calibration BEFORE sensors & UART RX tasks start */
+    SENSORS_INIT_SIGNALS();
     INIT_PH_EC_SENSORS();
     INIT_WATER_TEMPERATURE();
     INIT_WATER_LEVEL();
@@ -177,12 +177,12 @@ void INIT_PERIPHERALS(void)
     INIT_CIRCULATION_PUMPS();
     INIT_TANK_WATER_INPUT();
     INIT_TANK_WATER_OUTPUT();
+    INIT_MIXER_MOTORS();
     INIT_ROOM_TEMPERATURE();
     INIT_ROOM_HUMIDITY();
     INIT_ROOM_AIR_CONDITIONER();
     INIT_ROOM_LEDS();
     INIT_PIPE_VENTILATION();
-    SENSORS_INIT_SIGNALS();
 #ifdef INIT_LOGS
     ESP_LOGI(INIT_TAG, "INIT_PERIPHERALS...");
 #endif

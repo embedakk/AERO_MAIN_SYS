@@ -11,6 +11,9 @@
 
 #include "../../NOM_STACK/Sensors/RealTimeClock/inc/real_time_clock.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define         PH_APPLICATION_TAG         "PH_APPLICATION"
 
@@ -51,6 +54,10 @@ extern float ph_volume_buffer_mean_value, ph_ph_diff_buffer_mean_value;
 extern float ph_calculated_volume_buffer[32];
 extern float ph_calculated_ph_diff_buffer[32];
 
+extern bool ph_increase_get_current_time_assigned;
+extern bool ph_achieved_targeted_time;
+extern ph_diff_pos ph_prev_diff_position;
+
 int ph_timeToSeconds(DS1302_DateTime t);
 DS1302_DateTime ph_secondsToTime(int totalSeconds);
 DS1302_DateTime ph_calculateTimeDifference(DS1302_DateTime *start, DS1302_DateTime *end);
@@ -61,6 +68,11 @@ float calculate_ph_adjustment(float targetPH, float currentPH, float concentrati
 
 void CALCULATE_ADDED_PH_VOL_DIFF_ON_TANK(void);
 void EXE_PUMPS(void);
+void PH_RESET_STATE(void);
 void PH_EXE_APPLICATION(void);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif //PH_APPLICATION_H

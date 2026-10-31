@@ -1,24 +1,26 @@
 #include "../inc/wl_sensor.h"
 #include "../../NOM_STACK/Signals/Sensors/inc/sensor_ic_signals.h"
+#include "esp_timer.h"
 
-static inline uint32_t get_time_us()
+static inline uint32_t get_time_us(void)
 {
-    struct timeval tv;
-    gettimeofday(&tv, NULL);
-    return tv.tv_usec;
+    return (uint32_t)esp_timer_get_time();
 }
 
 static portMUX_TYPE mux = portMUX_INITIALIZER_UNLOCKED;
-uint32_t distance;
-esp_err_t res;
+uint32_t distance = 0;
+esp_err_t res = ESP_OK;
 ultrasonic_sensor_t sensor = 
 {
-    .trigger_pin = WL_SENSOR_TRIGGER_PIN,
-    .echo_pin = WL_SENSOR_ECHO_PIN
+    .trigger_pin = (gpio_num_t)WL_SENSOR_TRIGGER_PIN,
+    .echo_pin = (gpio_num_t)WL_SENSOR_ECHO_PIN
 };
 
 void ultrasonic_init(const ultrasonic_sensor_t *dev)
 {
+    if (!dev) {
+        return;
+    }
     gpio_pad_select_gpio( dev->trigger_pin );
     gpio_pad_select_gpio( dev->echo_pin );
     gpio_set_direction(dev->trigger_pin, GPIO_MODE_OUTPUT);
@@ -27,9 +29,9 @@ void ultrasonic_init(const ultrasonic_sensor_t *dev)
     gpio_set_level(dev->trigger_pin, 0);
 }
 
-esp_err_t ultrasonic_measure_cm(const ultrasonic_sensor_t *dev, uint32_t max_distance, uint32_t *distance)
+esp_err_t ultrasonic_measure_cm(const ultrasonic_sensor_t *dev, uint32_t max_distance, uint32_t *out_distance)
 {
-    if (!distance)
+    if (!dev || !out_distance)
         return ESP_ERR_INVALID_ARG;
 
     portENTER_CRITICAL(&mux);
@@ -56,7 +58,7 @@ esp_err_t ultrasonic_measure_cm(const ultrasonic_sensor_t *dev, uint32_t max_dis
     // got echo, measuring
     uint32_t echo_start = get_time_us();
     uint32_t time = echo_start;
-    uint32_t meas_timeout = echo_start + max_distance * ROUNDTRIP;
+    uint32_t meas_timeout = max_distance * ROUNDTRIP;
     while (gpio_get_level(dev->echo_pin))
     {
         time = get_time_us();
@@ -65,28 +67,27 @@ esp_err_t ultrasonic_measure_cm(const ultrasonic_sensor_t *dev, uint32_t max_dis
     }       
     portEXIT_CRITICAL(&mux);
 
-    *distance = (time - echo_start) / ROUNDTRIP;
+    *out_distance = (time - echo_start) / ROUNDTRIP;
 
     return ESP_OK;
 }
 
+void WL_SENSOR_ultrasonic_init(const ultrasonic_sensor_t *dev)
+{
+    ultrasonic_init(dev);
+}
+
+esp_err_t WL_SENSOR_ultrasonic_measure_cm(const ultrasonic_sensor_t *dev, uint32_t max_distance, uint32_t *out_distance)
+{
+    return ultrasonic_measure_cm(dev, max_distance, out_distance);
+}
+
 void WL_SENSOR_INIT(void)
 {
-
-    // ultrasonic_init(&sensor);
     return;
 }
 
 float WL_SENSOR_GET_DISTANCE_CM(void)
 {
-    // res = ultrasonic_measure_cm(&sensor, MAX_DISTANCE_CM, &distance);
-    // if (res != ESP_OK)
-    // {
-    //     //add diagnostic here
-    //     return 0.0f;
-    // }else
-    // {
-    //     return  (float) (distance / 1.0);
-    // }
     return (float)pump_io_get_distance_data;
 }

@@ -2,7 +2,6 @@
 #define DWIN_PROTOCOL_H
 
 #include <stdio.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
 #include <stdint.h>
@@ -17,13 +16,15 @@
 
 #include "../../NOM_STACK/Signals/Sensors/inc/sensor_ic_signals.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define UART_NUM                                                UART_NUM_1
 #define BUF_SIZE                                                1024
 
 #define TX_PIN                                                  27
 #define RX_PIN                                                  33
-
 
 #define         DWIN_PROTOCOL_TAG                               "DWIN_PROTOCOL"
 
@@ -32,6 +33,7 @@
 
 //WRITE COMMANDS MCU TO DISPLAY
 #define         UI_DWIN_WRITE_ADDR                              0x82
+#define         UI_DWIN_READ_ADDR                               0x83
 
 #define         UI_DWIN_WRITE_VIEW_PH_ADDRESS                   0x5000
 #define         UI_DWIN_WRITE_VIEW_EC_ADDRESS                   0x5010
@@ -46,7 +48,6 @@
 #define         UI_DWIN_WRITE_VIEW_LED_STATUS_TXT_ADDRESS       0x1020
 #define         UI_DWIN_WRITE_VIEW_PUMP_STATUS_TXT_ADDRESS      0x1040
 #define         UI_DWIN_WRITE_VIEW_SYS_STATUS_TXT_ADDRESS       0x1060
-
 
 #define         UI_DWIN_WRITE_CONFIG_TANK_CAP_ADDRESS           0x5200              
 #define         UI_DWIN_WRITE_CONFIG_DOSING_INT_ADDRESS         0x5210              
@@ -72,7 +73,6 @@
 #define         UI_DWIN_READ_SETTING_SYS_STOP_ADDRESS           0x5130
 #define         UI_DWIN_READ_SETTING_FILL_TANK_ADDRESS          0x5140
 #define         UI_DWIN_READ_SETTING_RELEASE_TANK_ADDRESS       0x5150
-
 
 #define         UI_DWIN_READ_CONFIG_TANK_CAP_ADDRESS            0x5200//2b              
 #define         UI_DWIN_READ_CONFIG_DOSING_INT_ADDRESS          0x5210//2b          
@@ -135,19 +135,20 @@ typedef enum
     UI_ASIAN_GREANS_ADDRESS    = 16,  
     UI_WRONG_FRUIT             = 17,
     UI_NO_FRUIT_SELECTED       = 18      
-}UI_fruits;
+} UI_fruits;
 
-uint8_t ph_conversion_bytes[4];
-uint8_t ec_conversion_bytes[4];
-uint8_t water_temp_conversion_bytes[4];
-uint8_t distance_conversion_bytes[4];
-uint8_t tank_cap_percentage_conversion_bytes[4];
-uint8_t room_temp_conversion_bytes[4];
-uint8_t humidity_conversion_bytes[4];
-uint8_t ph_voltage_conversion_bytes[4];
-uint8_t ec_voltage_conversion_bytes[4];
+extern uint8_t ph_conversion_bytes[4];
+extern uint8_t ec_conversion_bytes[4];
+extern uint8_t water_temp_conversion_bytes[4];
+extern uint8_t distance_conversion_bytes[4];
+extern uint8_t tank_cap_percentage_conversion_bytes[4];
+extern uint8_t room_temp_conversion_bytes[4];
+extern uint8_t humidity_conversion_bytes[4];
+extern uint8_t ph_voltage_conversion_bytes[4];
+extern uint8_t ec_voltage_conversion_bytes[4];
+extern uint8_t ui_queue_data[25][21];
+extern uint8_t read_write_op_counter;
 
-void IRAM_ATTR ui_protocol_uart_isr_handler(void *arg);
 void ui_protocol_rx_task(void *arg);
 
 void floatToHex(float value, uint8_t *hexBytes); 
@@ -155,34 +156,14 @@ void dataToDisplayBuff(uint8_t pointed_addr, float input_data, uint8_t floatByte
 void createDwinTextCommand(char *text, uint8_t *command);
 void check_address(uint8_t *received_data, uint16_t address, uint8_t format);
 void parse_received_byte(size_t length_of_data, uint8_t *received_data);
+void UI_reset_parser(void);
 
 void UI_INIT(void);
 void UI_DATA_OUT(void);
 void UI_EXE(void);
 
-//events from display to mcu READ COMMAND ADDRESS 0x83
-// {5A}{A5}{06}{83}{52}{00}{01}{05}{DC} response from tank capacity 1500 
-// {5A}{A5}{06}{83}{52}{10}{01}{00}{02} dosing intensity 2
-// {5A}{A5}{08}{83}{52}{20}{02}{00}{00}{AF}{C8}  ph sol 45000
-// {5A}{A5}{08}{83}{52}{30}{02}{00}{01}{86}{A0}  ec sol 100000
-// {5A}{A5}{06}{83}{52}{40}{01}{00}{FA} mixing time 250
+#ifdef __cplusplus
+}
+#endif
 
-
-// {5A}{A5}{06}{83}{53}{D0}{01}{00}{02} system stage 2
-// {5A}{A5}{06}{83}{55}{E0}{01}{00}{00} fruit cucumber
-
-//RESPONSE AFTER write operation 0x83
-// {5A}{A5}{03}{82}{4F}{4B}
-//{5A}{A5}{03}{82}{4F}{4B}|{5A}{A5}{06}{83}{53}{D0}{01}{00}{02}
-//{5A}{A5}{06}{83}{53}{D0}{01}{00}{02}|{5A}{A5}{03}{82}{4F}{4B} //11
-//{5A}{A5}{08}{83}{52}{30}{02}{00}{01}{86}{A0}|{5A}{A5}{03}{82}{4F}{4B} //13  ec sol 100000
-
-//4 formats for 9 byte data
-//0 => 7 8
-//6 => 13 14
-//9 => 16 17
-//{5A}{A5}{06}{83}{53}{D0}{01}{00}{02}|{5A}{A5}{06}{83}{53}{D0}{01}{00}{02}
-//11 18 19
-
-
-#endif //DWIN_PROTOCOL_h
+#endif //DWIN_PROTOCOL_H
